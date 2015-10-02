@@ -1,0 +1,143 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdftex 2015.2.16)  2 OCT 2015 11:44
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**"/Users/jakobdegn/Desktop/DSB/Mini projekt 1/Analyse.tex"
+(/Users/jakobdegn/Desktop/DSB/Mini projekt 1/Analyse.tex
+/Users/jakobdegn/Desktop/DSB/Mini projekt 1/Analyse.tex:1: Undefined control sequence.
+l.1 \chapter
+            {Musik}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Runaway argument?
+ Der vil være 4 forskellige grafer for hver musiksekvens.\\ \\ Den f\ETC.
+/Users/jakobdegn/Desktop/DSB/Mini projekt 1/Analyse.tex:7: Paragraph ended before \\ was complete.
+<to be read again> 
+                   \par 
+l.7 
+    
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+/Users/jakobdegn/Desktop/DSB/Mini projekt 1/Analyse.tex:8: Undefined control sequence.
+l.8 \section
+            {Cool music}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/jakobdegn/Desktop/DSB/Mini projekt 1/Analyse.tex:10: Undefined control sequence.
+l.10 \begin
+           {figure}[H]
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/jakobdegn/Desktop/DSB/Mini projekt 1/Analyse.tex:12: Undefined control sequence.
+l.12 	\includegraphics
+                      [width=0.8\textwidth]{Figurer/Snip20151001_3}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/jakobdegn/Desktop/DSB/Mini projekt 1/Analyse.tex:12: Missing number, treated as zero.
+<to be read again> 
+                   [
+l.12 	\includegraphics[
+                       width=0.8\textwidth]{Figurer/Snip20151001_3}
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+/Users/jakobdegn/Desktop/DSB/Mini projekt 1/Analyse.tex:12: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   [
+l.12 	\includegraphics[
+                       width=0.8\textwidth]{Figurer/Snip20151001_3}
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+/Users/jakobdegn/Desktop/DSB/Mini projekt 1/Analyse.tex:12: Undefined control sequence.
+l.12 	\includegraphics[width=0.8\textwidth
+                                          ]{Figurer/Snip20151001_3}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/jakobdegn/Desktop/DSB/Mini projekt 1/Analyse.tex:12: Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.12 ...width=0.8\textwidth]{Figurer/Snip20151001_
+                                                  3}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+/Users/jakobdegn/Desktop/DSB/Mini projekt 1/Analyse.tex:12: Extra }, or forgotten $.
+l.12 ...dth=0.8\textwidth]{Figurer/Snip20151001_3}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/Users/jakobdegn/Desktop/DSB/Mini projekt 1/Analyse.tex:13: Undefined control sequence.
+l.13 	\caption
+              {\textit{Cool music} - Signal som funktion af tiden i sekunder}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/jakobdegn/Desktop/DSB/Mini projekt 1/Analyse.tex:13: Undefined control sequence.
+l.13 	\caption{\textit
+                      {Cool music} - Signal som funktion af tiden i sekunder}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/jakobdegn/Desktop/DSB/Mini projekt 1/Analyse.tex:14: Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \end 
+l.14 \end
+         {figure}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+[1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] )
+(\end occurred inside a group at level 1)
+
+### simple group (level 1) entered at line 12 ({)
+### bottom level</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on "/Users/jakobdegn/Desktop/DSB/Mini projekt 1/.texpadtmp/Analyse.pdf" (1 page, 43408 bytes).
+PDF statistics:
+ 24 PDF objects out of 1000 (max. 8388607)
+ 16 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
