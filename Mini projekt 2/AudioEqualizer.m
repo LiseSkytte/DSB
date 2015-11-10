@@ -1,7 +1,7 @@
 clear 
 [x, fsample]= wavread('Uptown');
 
-x = x(fsample*92:fsample*106);
+x = x(fsample*92:fsample*102);
 
 N = length(x);
 N1 = 1000;
@@ -78,23 +78,50 @@ freqz(y_EQ)
 
 %%
 %FFT lavpas
-X = fft(x);
-LPf = fft(LP);
-
-Y_LPf = conv(X,LPf);
-
-figure(3)
-semilogx(f_axis(1:0.5*end),(abs((2/N1)*Y_LPf(1:0.5*end))))
+X = fft(x, N);
+LPf = fft(LP, N);
+% Y_LPf = conv(X,LPf);
 
 
-%FFT højpas
-X = fft(x);
-HPf = fft(HP);
+% 
+% figure(3)
+% semilogx(f_axis(1:0.5*end),20*log10(abs(2/N)*Y_LPf(1:0.5*end)))
+% xlabel('Frekvens i Hz')
+% ylabel('Størrelse dB')
 
-Y_HPf = conv(X,HPf);
+%FFT båndpas1
+Y_BP1f = fft(BP1, N);
 
 figure(4)
-plot(abs(Y_HPf))
+semilogx(f_axis(1:0.5*end),20*log10(abs(2/N)*Y_BP1f(1:0.5*end)))
+xlabel('Frekvens i Hz')
+ylabel('Størrelse dB')
+
+%FFT båndpas2
+Y_BP2f = fft(BP2, N);
+
+figure(5)
+semilogx(f_axis(1:0.5*end),20*log10(abs(2/N)*Y_BP2f(1:0.5*end)))
+xlabel('Frekvens i Hz')
+ylabel('Størrelse dB')
+
+%FFT båndpas3
+Y_BP3f = fft(BP3, N);
+
+figure(6)
+semilogx(f_axis(1:0.5*end),20*log10(abs(2/N)*Y_BP3f(1:0.5*end)))
+xlabel('Frekvens i Hz')
+ylabel('Størrelse dB')
+
+%FFT højpas
+Y_HPf = fft(HP, N);
+
+figure(7)
+semilogx(f_axis(1:0.5*end),20*log10(abs(2/N)*Y_HPf(1:0.5*end)))
+xlabel('Frekvens i Hz')
+ylabel('Størrelse dB')
+
+%FFT samlede output 
 
 
 
