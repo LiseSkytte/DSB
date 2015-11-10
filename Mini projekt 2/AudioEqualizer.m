@@ -40,8 +40,8 @@ k5 = 1;
 
 %Lavpas
 LP = fir1(N1, fc_LP/(0.5*fsample));
-% [b,a] = butter(N2,fc_LP/(0.5*fsample));
-% LP = filtfilt(b,a,x);
+%[b,a] = butter(N2,fc_LP/(0.5*fsample));
+%LP = filter(b,a,x);
 
 %Højpas
 HP = fir1(N1, fc_HP/(0.5*fsample), 'high');
