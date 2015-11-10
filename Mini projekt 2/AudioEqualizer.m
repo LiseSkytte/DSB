@@ -5,6 +5,7 @@ x = x(fsample*92:fsample*102);
 
 N = length(x);
 N1 = 1000;
+N2 = 6;
 
 delta_f = fsample/N;
 f_axis = [0:delta_f:fsample-delta_f];
@@ -39,6 +40,8 @@ k5 = 1;
 
 %Lavpas
 LP = fir1(N1, fc_LP/(0.5*fsample));
+% [b,a] = butter(N2,fc_LP/(0.5*fsample));
+% LP = filtfilt(b,a,x);
 
 %Højpas
 HP = fir1(N1, fc_HP/(0.5*fsample), 'high');
@@ -80,68 +83,104 @@ freqz(y_EQ)
 %FFT lavpas
 X = fft(x, N);
 LPf = fft(LP, N);
-% Y_LPf = conv(X,LPf);
+Y_LPf = X.*LPf;
 
-
-% 
-% figure(3)
-% semilogx(f_axis(1:0.5*end),20*log10(abs(2/N)*Y_LPf(1:0.5*end)))
-% xlabel('Frekvens i Hz')
-% ylabel('Størrelse dB')
-
-%FFT båndpas1
-Y_BP1f = fft(BP1, N);
+figure(3)
+semilogx(f_axis(1:0.5*end),20*log10(abs(2/N)*Y_LPf(1:0.5*end)))
+title('Lavpas FFT')
+xlabel('Frekvens i Hz')
+ylabel('Størrelse dB')
 
 figure(4)
-semilogx(f_axis(1:0.5*end),20*log10(abs(2/N)*Y_BP1f(1:0.5*end)))
+plot(f_axis(1:0.5*end), unwrap(angle(Y_LPf(1:0.5*end)))) %Unwrap bruges til at lægge faserne sammen
 xlabel('Frekvens i Hz')
-ylabel('Størrelse dB')
+ylabel('Fase')
 
-%FFT båndpas2
-Y_BP2f = fft(BP2, N);
+%FFT båndpas1
+BP1f = fft(BP1, N);
+Y_BP1f = X.*BP1f;
 
 figure(5)
-semilogx(f_axis(1:0.5*end),20*log10(abs(2/N)*Y_BP2f(1:0.5*end)))
+semilogx(f_axis(1:0.5*end),20*log10(abs(2/N)*Y_BP1f(1:0.5*end)))
+title('Båndpass1 FFT')
 xlabel('Frekvens i Hz')
 ylabel('Størrelse dB')
-
-%FFT båndpas3
-Y_BP3f = fft(BP3, N);
 
 figure(6)
-semilogx(f_axis(1:0.5*end),20*log10(abs(2/N)*Y_BP3f(1:0.5*end)))
+plot(f_axis(1:0.5*end), unwrap(angle(Y_BP1f(1:0.5*end)))) %Unwrap bruges til at lægge faserne sammen
 xlabel('Frekvens i Hz')
-ylabel('Størrelse dB')
+ylabel('Fase')
 
-%FFT højpas
-Y_HPf = fft(HP, N);
+%FFT båndpas2
+BP2f = fft(BP2, N);
+Y_BP2f = X.*BP2f;
 
 figure(7)
-semilogx(f_axis(1:0.5*end),20*log10(abs(2/N)*Y_HPf(1:0.5*end)))
+semilogx(f_axis(1:0.5*end),20*log10(abs(2/N)*Y_BP2f(1:0.5*end)))
+title('Båndpass2 FFT')
 xlabel('Frekvens i Hz')
 ylabel('Størrelse dB')
 
+figure(8)
+plot(f_axis(1:0.5*end), unwrap(angle(Y_BP2f(1:0.5*end)))) %Unwrap bruges til at lægge faserne sammen
+xlabel('Frekvens i Hz')
+ylabel('Fase')
+
+%FFT båndpas3
+BP3f = fft(BP3, N);
+Y_BP3f = X.*BP3f;
+
+figure(9)
+semilogx(f_axis(1:0.5*end),20*log10(abs(2/N)*Y_BP3f(1:0.5*end)))
+title('Båndpass3 FFT')
+xlabel('Frekvens i Hz')
+ylabel('Størrelse dB')
+
+figure(10)
+plot(f_axis(1:0.5*end), unwrap(angle(Y_BP3f(1:0.5*end)))) %Unwrap bruges til at lægge faserne sammen
+xlabel('Frekvens i Hz')
+ylabel('Fase')
+
+%FFT højpas
+HPf = fft(HP, N);
+Y_HPf = X.*HPf;
+
+figure(11)
+semilogx(f_axis(1:0.5*end),20*log10(abs(2/N)*Y_HPf(1:0.5*end)))
+title('Højpass FFT')
+xlabel('Frekvens i Hz')
+ylabel('Størrelse dB')
+
+figure(12)
+plot(f_axis(1:0.5*end), unwrap(angle(Y_HPf(1:0.5*end)))) %Unwrap bruges til at lægge faserne sammen
+xlabel('Frekvens i Hz')
+ylabel('Fase')
+
 %FFT samlede output 
+Y_EQf = k1*Y_LPf + k2*Y_HPf + k3*Y_BP1f + k4*Y_BP2f + k5*Y_BP3f;
+
+figure(13)
+semilogx(f_axis(1:0.5*end),20*log10(abs(2/N)*Y_EQf(1:0.5*end)))
+title('FFT for siganlet, der har været igennem alle filtre')
+xlabel('Frekvens i Hz')
+ylabel('Størrelse dB')
+
+figure(14)
+plot(f_axis(1:0.5*end), unwrap(angle(Y_EQf(1:0.5*end)))) %Unwrap bruges til at lægge faserne sammen
+xlabel('Frekvens i Hz')
+ylabel('Fase')
+
+%%
+%Invers af fft
+
+%Lavpas
+EQi = ifft(Y_EQf);
+
+figure(15)
+freqz(EQi)
+
+
+%
 
 
 
-
-
-% figure(2)
-% semilogx(f_axis(1:0.5*end), 20*log10(abs((2/N1)*y_LP(1:0.5*end))))
-% xlabel('Frekvens i Hz')
-% ylabel('Størrelse dB')
-% title('DFT størrelse magnitude')
-% grid on
-% 
-% 
-% figure(3)
-% plot(f_axis(1:0.5*end), unwrap(angle(y_LP(1:0.5*end)))) %Unwrap bruges til at lægge faserne sammen
-% xlabel('Frekvens i Hz')
-% ylabel('Fase')
-% title('DFT fase')
-% grid on
-% 
-% 
-% 
-% 
