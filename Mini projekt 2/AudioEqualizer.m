@@ -41,7 +41,7 @@ k5 = 1;
 %Lavpas
 LP = fir1(N1, fc_LP/(0.5*fsample));
 %[b,a] = butter(N2,fc_LP/(0.5*fsample));
-%LP = filter(b,a,x);
+%y_LP = filter(b,a,x);
 
 %Højpas
 HP = fir1(N1, fc_HP/(0.5*fsample), 'high');
@@ -53,7 +53,6 @@ BP3 = fir1(N1, [fc_BP3 fc_BP33]/(0.5*fsample), 'bandpass');
 
 %%
 %Filtrering
-
 
 y_LP=conv(x,LP);
 y_HP=conv(x,HP);
