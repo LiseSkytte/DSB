@@ -39,9 +39,9 @@ k5 = 1;
 %Filtre
 
 %Lavpas
-LP = fir1(N1, fc_LP/(0.5*fsample));
-%[b,a] = butter(N2,fc_LP/(0.5*fsample));
-%y_LP = filter(b,a,x);
+%LP = fir1(N1, fc_LP/(0.5*fsample));
+[b,a] = butter(N2,fc_LP/(0.5*fsample));
+y_LP = filter(b,a,x);
 
 %Højpas
 HP = fir1(N1, fc_HP/(0.5*fsample), 'high');
@@ -53,12 +53,15 @@ BP3 = fir1(N1, [fc_BP3 fc_BP33]/(0.5*fsample), 'bandpass');
 
 %%
 %Filtrering
-
-y_LP=conv(x,LP);
-y_HP=conv(x,HP);
-y_BP1=conv(x,BP1);
-y_BP2=conv(x,BP2);
-y_BP3=conv(x,BP3);
+y_HP=filter(HP,1,x);
+y_BP1=filter(BP1,1,x);
+y_BP2=filter(BP2,1,x);
+y_BP3=filter(BP3,1,x);
+%y_LP=conv(x,LP);
+%y_HP=conv(x,HP);
+%y_BP1=conv(x,BP1);
+%y_BP2=conv(x,BP2);
+%y_BP3=conv(x,BP3);
 
 %%
 %Samlede output for signalet
@@ -68,7 +71,7 @@ y_EQ = k1*y_LP + k2*y_HP + k3*y_BP1 + k4*y_BP2 + k5*y_BP3;
 %Det skal gerne være en lige streg, som man kan se nu.
 
 figure(1)
-freqz(LP)
+freqz(b,a)
 hold on
 freqz(BP1)
 freqz(BP2)
@@ -81,7 +84,10 @@ freqz(y_EQ)
 %%
 %FFT lavpas
 X = fft(x, N);
-LPf = fft(LP, N);
+[h,t] = impz(b,a,441001);
+figure(17)
+plot(h)
+LPf = fft(h.', N);
 Y_LPf = X.*LPf;
 
 figure(3)
@@ -168,6 +174,9 @@ figure(14)
 plot(f_axis(1:0.5*end), unwrap(angle(Y_EQf(1:0.5*end)))) %Unwrap bruges til at lægge faserne sammen
 xlabel('Frekvens i Hz')
 ylabel('Fase')
+
+figure(16)
+freqz(x)
 
 %%
 %Invers af fft
