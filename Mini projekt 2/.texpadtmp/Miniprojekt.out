@@ -1,0 +1,15 @@
+\BOOKMARK [0][-]{chapter.1}{Indledning}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Opgaveformulering}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{Audio Equalizer}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.3}{FIR}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.4}{IIR}{chapter.1}% 5
+\BOOKMARK [0][-]{chapter.2}{Miniprojekt Del 3}{}% 6
+\BOOKMARK [1][-]{section.2.1}{Design af filterne}{chapter.2}% 7
+\BOOKMARK [1][-]{section.2.2}{Filtering af signalet}{chapter.2}% 8
+\BOOKMARK [1][-]{section.2.3}{FFT af filtrene}{chapter.2}% 9
+\BOOKMARK [2][-]{subsection.2.3.1}{Lavpas filtreret}{section.2.3}% 10
+\BOOKMARK [2][-]{subsection.2.3.2}{B\345ndpasfiltre 1}{section.2.3}% 11
+\BOOKMARK [2][-]{subsection.2.3.3}{B\345ndpasfiltre 2}{section.2.3}% 12
+\BOOKMARK [2][-]{subsection.2.3.4}{B\345ndpasfiltre 3}{section.2.3}% 13
+\BOOKMARK [2][-]{subsection.2.3.5}{H\370jpasfiltret}{section.2.3}% 14
+\BOOKMARK [1][-]{section.2.4}{Det samlede signal}{chapter.2}% 15

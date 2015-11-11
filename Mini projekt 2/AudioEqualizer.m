@@ -41,7 +41,6 @@ k5 = 1;
 %Lavpas
 %LP = fir1(N1, fc_LP/(0.5*fsample));
 [b,a] = butter(N2,fc_LP/(0.5*fsample));
-y_LP = filter(b,a,x);
 
 %Højpas
 HP = fir1(N1, fc_HP/(0.5*fsample), 'high');
@@ -53,10 +52,13 @@ BP3 = fir1(N1, [fc_BP3 fc_BP33]/(0.5*fsample), 'bandpass');
 
 %%
 %Filtrering
-y_HP=filter(HP,1,x);
-y_BP1=filter(BP1,1,x);
-y_BP2=filter(BP2,1,x);
-y_BP3=filter(BP3,1,x);
+y_LP = filter(b,a,x);
+y_HP = filter(HP,1,x);
+y_BP1 = filter(BP1,1,x);
+y_BP2 = filter(BP2,1,x);
+y_BP3 = filter(BP3,1,x);
+
+
 %y_LP=conv(x,LP);
 %y_HP=conv(x,HP);
 %y_BP1=conv(x,BP1);
@@ -80,13 +82,18 @@ freqz(HP)
 
 figure(2)
 freqz(y_EQ)
+title('Det filtreret signal')
 
 %%
 %FFT lavpas
 X = fft(x, N);
 [h,t] = impz(b,a,441001);
+
 figure(17)
 plot(h)
+xlabel('Tid')
+ylabel('Amplitude')
+
 LPf = fft(h.', N);
 Y_LPf = X.*LPf;
 
@@ -177,6 +184,7 @@ ylabel('Fase')
 
 figure(16)
 freqz(x)
+title('Det ufiltreret signal')
 
 %%
 %Invers af fft
@@ -186,6 +194,7 @@ EQi = ifft(Y_EQf);
 
 figure(15)
 freqz(EQi)
+title('Det inverse af FFT signalet')
 
 
 %
