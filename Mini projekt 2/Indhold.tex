@@ -23,9 +23,7 @@ I et lydstudio kan man lave nogle mere detaljerede justeringer, såsom at fjerne
 I dette projekt skal der som sagt laves en tilsvarende equalizer vha. LP, BP1, BP2, BP3 og HP, som enter er designet som et FIR eller IIR. 
 
 \section{FIR}
+Et FIR filter er et digitalt filter, der har et impulssvar, som kun varer et endeligt antal samples. FIR filterets output samples afhænger altså udelukkende af tidligere input samples, hvilket adskiller sig fra IIR filteret.
 
 \section{IIR}
-
- 
-
-
+Et IIR filter er også et digitalt filter, men modsat FIR filteret, så afhænger IIR filterets output samples både af tidligere input samples og tidligere filter output samples. IIR filteret 'husker' altså tidligere outputs, og det er denne form for feedback der kendetegner et IIR filter.
