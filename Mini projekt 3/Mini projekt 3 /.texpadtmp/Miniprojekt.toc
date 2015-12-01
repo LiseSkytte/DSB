@@ -1,0 +1,7 @@
+\changetocdepth {2}
+\select@language {danish}
+\contentsline {chapter}{\chapternumberline {1}Projekt}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Indledning}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Analyse af Tale}{1}{section.1.2}
+\contentsline {section}{\numberline {1.3}Sammenligning af tale og tale 2}{5}{section.1.3}
+\contentsline {section}{\numberline {1.4}Lavpas filtring af talen}{7}{section.1.4}

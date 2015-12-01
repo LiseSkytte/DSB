@@ -30,6 +30,13 @@ xlabel('Tid i sekunder')
 ylabel('Amplitude volt')
 title('Plot af hele signalet')
 
+figure(20)
+plot(t1,X1)
+grid on 
+xlabel('Tid i sekunder')
+ylabel('Amplitude volt')
+title('Plot af det første interval')
+
 figure(2)
 plot(t1,X1,'r')
 hold on
@@ -50,112 +57,112 @@ xlabel('Tid i sekunder')
 ylabel('Amplitude volt')
 title('Plot af tale 2 signal')
 % 
-y1 = fft(X1,N1);
-y2 = fft(X2,N1);
-y3 = fft(X3,N1);
-y4 = fft(X4,N1);
-y5 = fft(X5,N1);
-y6 = fft(X6,N1);
-y7 = fft(Z1,N1);
-% y_samlet = y1 + y2 + y3 + y4 + y5 + y6;
-
-figure(4)
-semilogx(f_axis(1:0.5*end),20*log10(abs(2/N1)*y1(1:0.5*end)))
-title('FFT af første interval')
-xlabel('Frekvens i Hz')
-ylabel('Størrelse dB')
-grid on
-
-figure(5)
-plot(f_axis(1:0.5*end), unwrap(angle(y1(1:0.5*end)))) %Unwrap bruges til at lægge faserne sammen
-title('FFT af første interval')
-xlabel('Frekvens i Hz')
-ylabel('Fase')
-grid on
-
-figure(6)
-semilogx(f_axis(1:0.5*end),20*log10(abs(2/N1)*y2(1:0.5*end)))
-title('FFT af andet interval')
-xlabel('Frekvens i Hz')
-ylabel('Størrelse dB')
-grid on
-
-figure(7)
-plot(f_axis(1:0.5*end), unwrap(angle(y2(1:0.5*end)))) %Unwrap bruges til at lægge faserne sammen
-title('FFT af andet interval')
-xlabel('Frekvens i Hz')
-ylabel('Fase')
-grid on
-
-figure(8)
-semilogx(f_axis(1:0.5*end),20*log10(abs(2/N1)*y3(1:0.5*end)))
-title('FFT af tredje interval')
-xlabel('Frekvens i Hz')
-ylabel('Størrelse dB')
-grid on
-
-figure(9)
-plot(f_axis(1:0.5*end), unwrap(angle(y3(1:0.5*end)))) %Unwrap bruges til at lægge faserne sammen
-title('FFT af tredje interval')
-xlabel('Frekvens i Hz')
-ylabel('Fase')
-grid on
-
-figure(10)
-semilogx(f_axis(1:0.5*end),20*log10(abs(2/N1)*y4(1:0.5*end)))
-title('FFT af fjerde interval')
-xlabel('Frekvens i Hz')
-ylabel('Størrelse dB')
-grid on
-
-figure(11)
-plot(f_axis(1:0.5*end), unwrap(angle(y4(1:0.5*end)))) %Unwrap bruges til at lægge faserne sammen
-title('FFT af fjerde interval')
-xlabel('Frekvens i Hz')
-ylabel('Fase')
-grid on
-
-figure(12)
-semilogx(f_axis(1:0.5*end),20*log10(abs(2/N1)*y5(1:0.5*end)))
-title('FFT af femte interval')
-xlabel('Frekvens i Hz')
-ylabel('Størrelse dB')
-grid on
-
-figure(13)
-plot(f_axis(1:0.5*end), unwrap(angle(y5(1:0.5*end)))) %Unwrap bruges til at lægge faserne sammen
-title('FFT af femte interval')
-xlabel('Frekvens i Hz')
-ylabel('Fase')
-grid on
-
-figure(14)
-semilogx(f_axis(1:0.5*end),20*log10(abs(2/N1)*y6(1:0.5*end)))
-title('FFT af sjette interval')
-xlabel('Frekvens i Hz')
-ylabel('Størrelse dB')
-grid on
-
-figure(15)
-plot(f_axis(1:0.5*end), unwrap(angle(y6(1:0.5*end)))) %Unwrap bruges til at lægge faserne sammen
-title('FFT af sjette interval')
-xlabel('Frekvens i Hz')
-ylabel('Fase')
-grid on
-
-figure(16)
-semilogx(f_axis(1:0.5*end),20*log10(abs(2/N1)*y7(1:0.5*end)))
-title('FFT af tale 2')
-xlabel('Frekvens i Hz')
-ylabel('Størrelse dB')
-grid on
-
-figure(17)
-plot(f_axis(1:0.5*end), unwrap(angle(y7(1:0.5*end)))) %Unwrap bruges til at lægge faserne sammen
-title('FFT af tale 2')
-xlabel('Frekvens i Hz')
-ylabel('Fase')
-grid on
+% y1 = fft(X1,N1);
+% y2 = fft(X2,N1);
+% y3 = fft(X3,N1);
+% y4 = fft(X4,N1);
+% y5 = fft(X5,N1);
+% y6 = fft(X6,N1);
+% y7 = fft(Z1,N1);
+% % y_samlet = y1 + y2 + y3 + y4 + y5 + y6;
+% 
+% figure(4)
+% semilogx(f_axis(1:0.5*end),20*log10(abs(2/N1)*y1(1:0.5*end)))
+% title('FFT af første interval')
+% xlabel('Frekvens i Hz')
+% ylabel('Størrelse dB')
+% grid on
+% 
+% figure(5)
+% plot(f_axis(1:0.5*end), unwrap(angle(y1(1:0.5*end)))) %Unwrap bruges til at lægge faserne sammen
+% title('FFT af første interval')
+% xlabel('Frekvens i Hz')
+% ylabel('Fase')
+% grid on
+% 
+% figure(6)
+% semilogx(f_axis(1:0.5*end),20*log10(abs(2/N1)*y2(1:0.5*end)))
+% title('FFT af andet interval')
+% xlabel('Frekvens i Hz')
+% ylabel('Størrelse dB')
+% grid on
+% 
+% figure(7)
+% plot(f_axis(1:0.5*end), unwrap(angle(y2(1:0.5*end)))) %Unwrap bruges til at lægge faserne sammen
+% title('FFT af andet interval')
+% xlabel('Frekvens i Hz')
+% ylabel('Fase')
+% grid on
+% 
+% figure(8)
+% semilogx(f_axis(1:0.5*end),20*log10(abs(2/N1)*y3(1:0.5*end)))
+% title('FFT af tredje interval')
+% xlabel('Frekvens i Hz')
+% ylabel('Størrelse dB')
+% grid on
+% 
+% figure(9)
+% plot(f_axis(1:0.5*end), unwrap(angle(y3(1:0.5*end)))) %Unwrap bruges til at lægge faserne sammen
+% title('FFT af tredje interval')
+% xlabel('Frekvens i Hz')
+% ylabel('Fase')
+% grid on
+% 
+% figure(10)
+% semilogx(f_axis(1:0.5*end),20*log10(abs(2/N1)*y4(1:0.5*end)))
+% title('FFT af fjerde interval')
+% xlabel('Frekvens i Hz')
+% ylabel('Størrelse dB')
+% grid on
+% 
+% figure(11)
+% plot(f_axis(1:0.5*end), unwrap(angle(y4(1:0.5*end)))) %Unwrap bruges til at lægge faserne sammen
+% title('FFT af fjerde interval')
+% xlabel('Frekvens i Hz')
+% ylabel('Fase')
+% grid on
+% 
+% figure(12)
+% semilogx(f_axis(1:0.5*end),20*log10(abs(2/N1)*y5(1:0.5*end)))
+% title('FFT af femte interval')
+% xlabel('Frekvens i Hz')
+% ylabel('Størrelse dB')
+% grid on
+% 
+% figure(13)
+% plot(f_axis(1:0.5*end), unwrap(angle(y5(1:0.5*end)))) %Unwrap bruges til at lægge faserne sammen
+% title('FFT af femte interval')
+% xlabel('Frekvens i Hz')
+% ylabel('Fase')
+% grid on
+% 
+% figure(14)
+% semilogx(f_axis(1:0.5*end),20*log10(abs(2/N1)*y6(1:0.5*end)))
+% title('FFT af sjette interval')
+% xlabel('Frekvens i Hz')
+% ylabel('Størrelse dB')
+% grid on
+% 
+% figure(15)
+% plot(f_axis(1:0.5*end), unwrap(angle(y6(1:0.5*end)))) %Unwrap bruges til at lægge faserne sammen
+% title('FFT af sjette interval')
+% xlabel('Frekvens i Hz')
+% ylabel('Fase')
+% grid on
+% 
+% figure(16)
+% semilogx(f_axis(1:0.5*end),20*log10(abs(2/N1)*y7(1:0.5*end)))
+% title('FFT af tale 2')
+% xlabel('Frekvens i Hz')
+% ylabel('Størrelse dB')
+% grid on
+% 
+% figure(17)
+% plot(f_axis(1:0.5*end), unwrap(angle(y7(1:0.5*end)))) %Unwrap bruges til at lægge faserne sammen
+% title('FFT af tale 2')
+% xlabel('Frekvens i Hz')
+% ylabel('Fase')
+% grid on
 
 %%
 %%Lavpasfilter
@@ -163,6 +170,7 @@ fc_LP = 500;
 LP = fir1(1000, fc_LP/(0.5*fsample));
 
 y_LP = filter(LP,1,X1);
+z_LP = filter(LP,1,Z1);
 
 figure(18)
 plot(t1, X1)
@@ -179,6 +187,8 @@ ylabel('Amplitude volt')
 grid on
 
 soundsc(y_LP,fsample)
+pause
+soundsc(z_LP,fsample)
 
 %%
 
